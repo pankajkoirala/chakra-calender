@@ -1,6 +1,6 @@
 {
   "name": "chakra-calender",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "private": false,
   "description": "Chakra_calender",
   "main": "./src/Chakra_calender/index.tsx",
