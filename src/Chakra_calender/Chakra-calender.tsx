@@ -109,7 +109,6 @@ const ChakraCalender = ({
                   const y = `${e.year}-${e.month}-${x}`
                   const isInclude = Object.keys(values).includes(y)
                   const colorIndex = values[y]
-                  console.log(isInclude, y)
 
                   return (
                     <Flex flexDir={'column'}>
