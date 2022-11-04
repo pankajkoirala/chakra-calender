@@ -1,7 +1,7 @@
 # Chakra-Calender
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-![Tux, the Linux mascot](/assets/image.png)
+![Tux, the Linux mascot](./assets/image.png)
 
 ## Installation
 
