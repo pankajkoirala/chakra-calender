@@ -1,8 +1,9 @@
 import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react'
 import { Tooltip } from '@chakra-ui/react'
+import React from 'react'
 
 interface Iprops {
-  values: { [key: string]: string }
+  values: { [key: string]: number }
   colors: string[]
   cellHeight?: string
   cellWidth?: string
@@ -22,7 +23,7 @@ interface Iprops {
   legendLabelBorderRadius?: string
   legendLabelFontSize?: string
 }
-const Chakra_calender = ({
+const ChakraCalender = ({
   values,
   colors = ['#adad85', '#004d1a', '#009933', '#00e64d', '#4dff88'],
   cellHeight = '12px',
@@ -167,4 +168,4 @@ const Chakra_calender = ({
     </Flex>
   )
 }
-export default Chakra_calender
+export default ChakraCalender

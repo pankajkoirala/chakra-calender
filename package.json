@@ -1,9 +1,10 @@
 {
   "name": "chakra-calender",
-  "version": "0.1.9",
+  "version": "0.1.12",
   "private": false,
+  "files": ["src/**/*"],
   "description": "Chakra_calender",
-  "main": "./build/index.html",
+  "main": "./src/Chakra_calender/index.ts",
   "dependencies": {
     "@chakra-ui/react": "^2.3.7",
     "@emotion/react": "^11.10.5",
@@ -24,8 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build": " NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+        "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
