@@ -1,39 +1,39 @@
-import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react'
-import { Tooltip } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import { Tooltip } from '@chakra-ui/react';
+import React from 'react';
 
 interface Iprops {
-  values?: { [key: string]: { value: number; message: string } }
-  colors?: string[]
-  cellHeight?: string
-  cellWidth?: string
-  hasTooltip?: boolean
-  cellSpecing?: number
-  gridGap?: string
-  padding?: string
-  backgroundColor?: string
-  monthsLabel?: boolean
-  monthsLabelFontSize?: string
-  daysLabel?: boolean
-  daysLabelFontSize?: string
-  cellBorderRadius?: string
-  legendGap?: string
-  legend?: string[]
-  legendLabelGap?: string
-  legendLabelBorderRadius?: string
-  legendLabelFontSize?: string
-  year?: string
-  tooltip?: (date: string, message: string) => React.ReactNode
-  height?: string
-  width?: string
-  margin?: string
+  values?: { [key: string]: { value: number; message: string } };
+  colors?: string[];
+  cellHeight?: string;
+  cellWidth?: string;
+  hasTooltip?: boolean;
+  cellSpecing?: number;
+  gridGap?: string;
+  padding?: string;
+  backgroundColor?: string;
+  monthsLabel?: boolean;
+  monthsLabelFontSize?: string;
+  daysLabel?: boolean;
+  daysLabelFontSize?: string;
+  cellBorderRadius?: string;
+  legendGap?: string;
+  legend?: string[];
+  legendLabelGap?: string;
+  legendLabelBorderRadius?: string;
+  legendLabelFontSize?: string;
+  year?: string;
+  tooltip?: (date: string, message: string) => React.ReactNode;
+  height?: string;
+  width?: string;
+  margin?: string;
 }
 
 type Result = {
-  year: number
-  mothInNumber: number
-  mothInString: string
-}
+  year: number;
+  mothInNumber: number;
+  mothInString: string;
+};
 const ChakraCalender = ({
   values = { '2022-3-4': { value: 2, message: 'test' } },
   colors = ['#adad85', '#004d1a', '#009933', '#00e64d', '#4dff88'],
@@ -62,35 +62,30 @@ const ChakraCalender = ({
   ...others
 }: Iprops) => {
   const getDays = (year: number, month: number) =>
-    new Date(year, month + 1, 0).getDate()
+    new Date(year, month + 1, 0).getDate();
 
   function getMonthNames(
     date = new Date(new Date().setMonth(new Date().getMonth() - 0))
   ) {
-    const d = new Date(year ?? date)
-    d.setDate(1)
-    const result: Result[] = []
+    const d = new Date(year ?? date);
+    d.setDate(1);
+    const result: Result[] = [];
     for (let i = 0; i < 12; i++) {
       result.push({
         year: d.getFullYear(),
         mothInNumber: d.getMonth(),
         mothInString: d.toLocaleString('default', { month: 'long' }),
-      })
-      d.setMonth(d.getMonth() + 1)
+      });
+      d.setMonth(d.getMonth() + 1);
     }
-    const finaldata = result.map((e) => {
-      console.log()
+    const finaldata = result.map(e => {
+      console.log();
       const monthFirstDay = Number(
         new Date(`${e?.year}-${e?.mothInNumber + 1}-${1}`).getDay()
-      )
-      console.log(Array.from({ length: monthFirstDay }, (_, i) => 0))
-
-      const daysInArray = Array.from(
-        { length: monthFirstDay },
-        (_, i) => 0
-      ).concat(
+      );
+      const daysInArray = Array.from({ length: monthFirstDay }, _ => 0).concat(
         Array.from({ length: getDays(e.year, e.mothInNumber) }, (_, i) => i + 1)
-      )
+      );
 
       return {
         year: e.year,
@@ -98,12 +93,12 @@ const ChakraCalender = ({
         mothInString: e.mothInString,
         day: getDays(e.year, e.mothInNumber),
         daysInArray: daysInArray,
-      }
-    })
-    return finaldata
+      };
+    });
+    return finaldata;
   }
 
-  const day = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+  const day = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
   return (
     <Flex
       gap={legendGap}
@@ -121,7 +116,7 @@ const ChakraCalender = ({
             <Flex
               key={i}
               height={'auto'}
-              flexWrap='wrap'
+              flexWrap="wrap"
               flexDir={'column'}
               gap={'6px'}
             >
@@ -130,7 +125,7 @@ const ChakraCalender = ({
                   margin={0}
                   fontSize={monthsLabelFontSize}
                   fontWeight={'500'}
-                  textAlign='center'
+                  textAlign="center"
                 >
                   {`${e.mothInString}, ${e.year}`}
                 </Text>
@@ -148,10 +143,10 @@ const ChakraCalender = ({
               </>
               <SimpleGrid columns={7} spacing={cellSpecing}>
                 {e.daysInArray.map((x, i) => {
-                  const y = `${e?.year}-${e?.month}-${x}`
-                  const isInclude = Object.keys(values).includes(y)
-                  const colorIndex = values[y]?.value ?? colors[0]
-                  const message = values[y]?.message ?? ''
+                  const y = `${e?.year}-${e?.month}-${x}`;
+                  const isInclude = Object.keys(values).includes(y);
+                  const colorIndex = values[y]?.value ?? colors[0];
+                  const message = values[y]?.message ?? '';
                   return (
                     <Flex key={i} flexDir={'column'} gap={'4px'}>
                       <Tooltip
@@ -176,7 +171,7 @@ const ChakraCalender = ({
                             </>
                           )
                         }
-                        fontSize='md'
+                        fontSize="md"
                       >
                         <Box
                           display={x === 0 ? 'none' : 'inherit'}
@@ -191,11 +186,11 @@ const ChakraCalender = ({
                         />
                       </Tooltip>
                     </Flex>
-                  )
+                  );
                 })}
               </SimpleGrid>
             </Flex>
-          )
+          );
         })}
       </Flex>
       <Flex justifyContent={'flex-end'} padding={'12px'}>
@@ -214,6 +209,6 @@ const ChakraCalender = ({
         </Flex>
       </Flex>
     </Flex>
-  )
-}
-export default ChakraCalender
+  );
+};
+export default ChakraCalender;
