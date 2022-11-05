@@ -133,7 +133,7 @@ const ChakraCalender = ({
               <>
                 {daysLabel && (
                   <SimpleGrid columns={7} spacing={cellSpecing}>
-                    {day.map((x: string, i) => (
+                    {day.map((_, i) => (
                       <Text m={0} fontSize={daysLabelFontSize}>
                         {day[i]}
                       </Text>
