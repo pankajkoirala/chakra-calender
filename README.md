@@ -8,19 +8,19 @@
 #### using npm:
 
 ```
-$ npm i chakra-calender
+$ npm i chakra-calender-chart
 ```
 
 #### using yarn:
 
 ```
-$ yarn add chakra-calender
+$ yarn add chakra-calender-chart
 ```
 
 ## Example
 
 ```ruby
-import { ChakraCalender } from 'Chakra-Calender';
+import { ChakraCalender } from 'Chakra-Calender-chart';
 
 const App=()=>{
        const value={ '2022-5-12': { value: 2, message: 'leave'}}
