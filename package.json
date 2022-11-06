@@ -1,6 +1,6 @@
 {
-  "name": "chakra-calender-chart",
-  "version": "0.1.1",
+  "name": "chakra-react-calender",
+  "version": "0.0.7",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -35,20 +35,20 @@
     "trailingComma": "es5"
   },
   "author": "pankajkoirala",
-  "module": "dist/mylib.esm.js",
+  "module": "dist/chakra-react-calender.esm.js",
   "size-limit": [
     {
-      "path": "dist/mylib.cjs.production.min.js",
+      "path": "dist/chakra-react-calender.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/mylib.esm.js",
+      "path": "dist/chakra-react-calender.esm.js",
       "limit": "10 KB"
     }
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.1.0",
-    "@types/react": "^18.0.24",
+    "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "husky": "^8.0.1",
     "react": "^18.2.0",
